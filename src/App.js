@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import ItemContainer from './containers/ItemContainer'
 import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
 
 class App extends React.Component {
@@ -29,14 +30,18 @@ state = {
 
  render(){
   return (
-       <div className="App">
-       <h1> Welcome to the macro management app  </h1>
+    <div className="content-wrap">
+      <Switch>
+       <Route path="/items" render component={() => <ItemContainer items={this.state.items} handleChange={this.handleChange} />} />
+      </Switch>
     </div>
   );
  }
 
 
-
+handleChange = (e) => {
+  console.log(e.target.value)
+}
 
 
 
