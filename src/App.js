@@ -16,6 +16,7 @@ class App extends React.Component {
 // 	console.error(err);
 // });
 
+state
 
   componentDidMount() {
     fetch("https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat", {
@@ -26,6 +27,9 @@ class App extends React.Component {
       	}
       }).then(r => r.json())
       .then(console.log)
+      .catch(err => {
+        console.log(err);
+      })
     }
   
 
