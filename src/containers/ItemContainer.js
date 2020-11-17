@@ -14,7 +14,7 @@ function Itemcontainer(props) {
     console.log(props)
         return (
         <div className="items">
-            <h1>Hello</h1>
+            <h1>Hi</h1>
             <form>
                <label htmlFor="search">Search for an item</label>
                <input type="text" onChange={handleSearch}/>
