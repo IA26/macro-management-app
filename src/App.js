@@ -29,6 +29,7 @@ state = {
 
 
  render(){
+   console.log(this.state.items)
   return (
     <div className="content-wrap">
       <Switch>
