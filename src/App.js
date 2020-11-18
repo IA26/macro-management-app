@@ -7,7 +7,7 @@ class App extends React.Component {
 
 
 state = {
-  items: []
+  food: []
 };
 
   componentDidMount() {
@@ -20,7 +20,7 @@ state = {
       }).then(r => r.json())
       .then( (items) => {
         this.setState({
-          items: items.hits
+          food: items.hits
         })
       })
       .catch(err => {
@@ -35,7 +35,7 @@ state = {
   return (
     <div className="content-wrap">
       <Switch>
-       <Route path="/items" render component={() => <ItemContainer items={this.state.items} handleChange={this.handleChange} />} />
+       <Route path="/items" render component={() => <ItemContainer items={this.state.food} handleChange={this.handleChange} />} />
       </Switch>
     </div>
   );

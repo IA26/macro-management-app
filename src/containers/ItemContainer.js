@@ -8,10 +8,10 @@ function Itemcontainer(props) {
       props.handleChange(e)
     }
     
-    // let arrOfComponents = props.items.map( (itemObj) => {
-    //     return <ItemCard item={itemObj}/>
-    // })
-    console.log(props)
+    let arrOfComponents = props.items.map( (itemObj, index) => {
+        return <ItemCard item={itemObj} id={index}/>
+    })
+    // console.log(props.items.map(console.log))
         return (
         <div className="items">
             <h1>Hi</h1>
@@ -19,6 +19,12 @@ function Itemcontainer(props) {
                <label htmlFor="search">Search for an item</label>
                <input type="text" onChange={handleSearch}/>
             </form>
+
+
+
+            <div>
+              {arrOfComponents}
+            </div>
         </div>
         )
 
