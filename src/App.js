@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
 import ItemContainer from './containers/ItemContainer'
-import {Switch, Route, withRouter, Redirect} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 
 class App extends React.Component {
 
 
 state = {
   items: []
-}
+};
 
   componentDidMount() {
     fetch("https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat", {
@@ -18,18 +18,20 @@ state = {
       		"x-rapidapi-host": "nutritionix-api.p.rapidapi.com"
       	}
       }).then(r => r.json())
-      .then(items => this.setState({
-        items
-      }))
+      .then( (items) => {
+        this.setState({
+          items: items.hits
+        })
+      })
       .catch(err => {
         console.log(err);
       })
-    }
+    };
   
 
 
  render(){
-   console.log(this.state.items)
+  //  console.log(localStorage)
   return (
     <div className="content-wrap">
       <Switch>
@@ -37,7 +39,7 @@ state = {
       </Switch>
     </div>
   );
- }
+ };
 
 
 handleChange = (e) => {

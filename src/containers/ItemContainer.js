@@ -8,7 +8,7 @@ function Itemcontainer(props) {
       props.handleChange(e)
     }
     
-    // let arrayOfItems = props.items.hits.map( itemObj => {
+    // let arrOfComponents = props.items.map( (itemObj) => {
     //     return <ItemCard item={itemObj}/>
     // })
     console.log(props)
