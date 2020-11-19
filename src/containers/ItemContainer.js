@@ -9,7 +9,7 @@ function Itemcontainer(props) {
     }
     
     let arrOfComponents = props.items.map( (itemObj, index) => {
-        return <ItemCard item={itemObj.fields} id={index}/>
+        return <ItemCard item={itemObj.fields} key={index} />
     })
     // console.log(props.items.map(console.log))
         return (

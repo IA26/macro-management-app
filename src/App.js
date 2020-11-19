@@ -11,7 +11,7 @@ state = {
 };
 
   componentDidMount() {
-    fetch("https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar%20cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat", {
+    fetch("https://nutritionix-api.p.rapidapi.com/v1_1/search/cheddar cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat", {
       	"method": "GET",
       	"headers": {
       		"x-rapidapi-key": "6d374b39c8mshe47d179b0c5da0bp14c2bdjsna684b91be557",
@@ -31,7 +31,7 @@ state = {
 
 
  render(){
-  //  console.log(localStorage)
+   console.log(this.state.food)
   return (
     <div className="content-wrap">
       <Switch>
