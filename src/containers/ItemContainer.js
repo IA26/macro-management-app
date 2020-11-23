@@ -1,23 +1,44 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ItemCard from './ItemCard'
 
-function Itemcontainer(props) {
- 
+class Itemcontainer extends React.Component {
 
-    let handleSearch = (e) => {
-      props.handleChange(e)
+  state = {
+    search: ""
+  }
+ 
+    // const [search, setSearch] = React.useState("");
+
+    handleSearch = (e) => {
+      this.setState({
+        search: e.target.value
+      })
+      this.props.handleChange(this.state.search)
     }
+
+    // console.log(search)
+
+    // console.log(searchTerm)
+    // let handleSearch = (e) => {
+    //   this.handleChange(e)
+    // }
     
-    let arrOfComponents = props.items.map( (itemObj, index) => {
+   
+    // console.log(this.items.map(console.log))
+    render(){
+
+      // console.log(this.props)
+
+      let arrOfComponents = this.props.items.map( (itemObj, index) => {
         return <ItemCard item={itemObj.fields} key={index} />
     })
-    // console.log(props.items.map(console.log))
+
         return (
         <div className="items">
             <h1>Hi</h1>
             <form>
-               <label htmlFor="search">Search for an item</label>
-               <input type="text" onChange={handleSearch}/>
+               <label htmlFor="search">Search for an item:</label>
+               <input type="text" name="search" value={this.state.search}  onChange={this.handleSearch}/>
             </form>
 
 
@@ -27,6 +48,7 @@ function Itemcontainer(props) {
             </div>
         </div>
         )
+    }
 
 }
 
