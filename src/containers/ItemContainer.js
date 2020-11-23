@@ -4,8 +4,27 @@ import ItemCard from './ItemCard'
 class Itemcontainer extends React.Component {
 
   state = {
+    food: [],
     search: ""
   }
+
+  componentDidMount() {
+    fetch(`https://nutritionix-api.p.rapidapi.com/v1_1/search/cheese?fields=item_name%2Citem_id%2Cbrand_name%2Cnf_calories%2Cnf_total_fat`, {
+      	"method": "GET",
+      	"headers": {
+      		"x-rapidapi-key": "6d374b39c8mshe47d179b0c5da0bp14c2bdjsna684b91be557",
+      		"x-rapidapi-host": "nutritionix-api.p.rapidapi.com"
+      	}
+      }).then(r => r.json())
+      .then( (items) => {
+        this.setState({
+          food: items.hits
+        })
+      })                                                                  
+      .catch(err => {
+        console.log(err);
+      })
+    };
  
     // const [search, setSearch] = React.useState("");
 
@@ -13,23 +32,15 @@ class Itemcontainer extends React.Component {
       this.setState({
         search: e.target.value
       })
-      this.props.handleChange(this.state.search)
+      // console.log(this.state.search)
     }
-
-    // console.log(search)
-
-    // console.log(searchTerm)
-    // let handleSearch = (e) => {
-    //   this.handleChange(e)
-    // }
+  
     
-   
-    // console.log(this.items.map(console.log))
     render(){
+      console.log(this.state.search)
 
-      // console.log(this.props)
 
-      let arrOfComponents = this.props.items.map( (itemObj, index) => {
+      let arrOfComponents = this.state.food.map( (itemObj, index) => {
         return <ItemCard item={itemObj.fields} key={index} />
     })
 
