@@ -47,10 +47,7 @@ state = {
 
   //   };
   
-  handleChange = (e) => {
-        // console.log(e)
-      }
-
+  
 
  render(){
   //  console.log(
