@@ -27,18 +27,18 @@ class Itemcontainer extends React.Component {
       })
     };
  
-    handleFilter = (e) => {
-      if (e) {
-        this.setState({
-          search: e.target.value
-        })
-        console.log(this.state.search)
-        return this.state.search
-      } else {
-        return "cheese"
-      }
+    // handleFilter = (e) => {
+    //   if (e) {
+    //     this.setState({
+    //       search: e.target.value
+    //     })
+    //     console.log(this.state.search)
+    //     return this.state.search
+    //   } else {
+    //     return "cheese"
+    //   }
   
-    }
+    // }
   
     
     
