@@ -22,9 +22,6 @@ class Itemcontainer extends React.Component {
           food: items.hits
         })
       })                                                                  
-      .catch(err => {
-        console.log(err);
-      })
     };
  
     handleFilter = (e) => {
