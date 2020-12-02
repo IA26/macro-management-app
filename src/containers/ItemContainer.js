@@ -35,7 +35,7 @@ class Itemcontainer extends React.Component {
         console.log(this.state.search)
         return this.state.search
       } else {
-        return "cheese"
+        return "meat"
       }
   
     }
