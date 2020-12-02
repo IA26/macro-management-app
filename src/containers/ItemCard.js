@@ -12,7 +12,6 @@ let {brand_name, nf_calories, item_name, nf_total_fat} = item
              <li> Brand: {brand_name}</li>
              <li> Cals: {Math.round(nf_calories)}</li> 
              <li> Item name: {item_name}</li> 
-             <li> Total Fat: {Math.round(nf_total_fat)}</li>   
             </ul>
             
         </div>
